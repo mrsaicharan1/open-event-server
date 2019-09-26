@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from dataclasses import dataclass
 from app.models import db
 from app.models.base import SoftDeletionModel
 
@@ -7,6 +7,7 @@ TICKET = 'ticket'
 EVENT = 'event'
 
 
+@dataclass(init=True, repr=True)
 class AccessCode(SoftDeletionModel):
     __tablename__ = "access_codes"
 
